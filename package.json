@@ -4,7 +4,9 @@
   "description": "A javascript project for webpack and stuff",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "npm run build & lite-server",
+    "build": "node-sass scss --output dist/css --watch",
+    "webpack": "webpack --watch"
   },
   "repository": {
     "type": "git",
@@ -22,6 +24,8 @@
   },
   "homepage": "https://github.com/simplon-lyon/promo5-js-gestion#readme",
   "devDependencies": {
-    "lite-server": "^2.3.0"
+    "lite-server": "^2.3.0",
+    "node-sass": "^4.7.2",
+    "webpack": "^3.10.0"
   }
 }
