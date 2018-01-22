@@ -1,0 +1,27 @@
+{
+  "name": "promo5-js-gestion",
+  "version": "1.0.0",
+  "description": "A javascript project for webpack and stuff",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/simplon-lyon/promo5-js-gestion.git"
+  },
+  "keywords": [
+    "javascript",
+    "webpack",
+    "simplon"
+  ],
+  "author": "Simplon",
+  "license": "CC0-1.0",
+  "bugs": {
+    "url": "https://github.com/simplon-lyon/promo5-js-gestion/issues"
+  },
+  "homepage": "https://github.com/simplon-lyon/promo5-js-gestion#readme",
+  "devDependencies": {
+    "lite-server": "^2.3.0"
+  }
+}
