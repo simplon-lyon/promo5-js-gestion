@@ -32,9 +32,17 @@ module.exports = {
     //Paramètre pour avoir les sources maps (faire correspondre les
     //lignes du bundle aux lignes de nos fichiers sources)
     devtool: 'source-map',
+    /**
+     * On définit dans la propriété module les loaders que webpack
+     * utilisera
+     */
     module: {
         rules: [{
+            //On lui donne une regex à tester, pour lui dire que dès
+            //qu'il rencontrera ça dans le nom d'un fichier...
             test: /\.scss$/,
+            //il devra utiliser les différents loaders qu'on liste ici
+            //chaque loader doit être installé via npm en save-dev
             use: [{
                 loader: "style-loader" // creates style nodes from JS strings
             }, {
