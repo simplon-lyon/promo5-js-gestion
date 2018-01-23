@@ -8,6 +8,14 @@
  * Si on ne met pas ça, il va aller chercher dans les node_modules.
  */
 import {MaClasse} from './ma-classe';
+/**
+ * Grâce aux loaders qu'on a mis dans la configuration de webpack,
+ * on peut lui dire d'importer directement un fichier scss, webpack
+ * se chargera de compiler le scss en css, puis de convertir le css
+ * en une chaîne de caractère js, puis d'injecter cette chaîne de 
+ * caractère dans la balise style de la page où l'on chargera
+ * le bundle obtenu via webpack.
+ */
 import '../scss/index.scss';
 
 new MaClasse().methode();
