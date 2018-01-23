@@ -1,4 +1,3 @@
-const htmlWebpackPlugin = require('html-webpack-plugin');
 /**
  * Webpack est un utilitaire permettant de build les projets
  * javascripts de manière automatique.
@@ -50,17 +49,5 @@ module.exports = {
                 }
             }]
         }]
-    },
-    plugins: [
-        new htmlWebpackPlugin({
-            filename:'dist/index.html',
-            template: './index.html',
-            chunks: ['index']
-        }),
-        new htmlWebpackPlugin({
-            filename:'dist/bootstrap.html',
-            template: './bootstrap.html',
-            chunks: ['bootstrap']
-        })
-    ]
+    }
 }
