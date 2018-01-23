@@ -1,3 +1,4 @@
+const htmlWebpackPlugin = require('html-webpack-plugin');
 /**
  * Webpack est un utilitaire permettant de build les projets
  * javascripts de manière automatique.
@@ -21,12 +22,45 @@
 
 module.exports = {
     //Le ou les points de départ de notre/nos script(s)
-    entry: './scripts/index.js',
+    entry: {
+        index:'./scripts/index.js',
+        bootstrap:'./scripts/bootstrap.js'
+    },
     //Le(s) fichier(s) généré(s) par webpack
     output: {
-        filename: 'dist/bundle.js'
+        filename: 'dist/[name].bundle.js'
     },
     //Paramètre pour avoir les sources maps (faire correspondre les
     //lignes du bundle aux lignes de nos fichiers sources)
-    devtool: 'eval'
+    devtool: 'source-map',
+    module: {
+        rules: [{
+            test: /\.scss$/,
+            use: [{
+                loader: "style-loader" // creates style nodes from JS strings
+            }, {
+                loader: "css-loader", // translates CSS into CommonJS
+                options: {
+                    sourceMap: true
+                }
+            }, {
+                loader: "sass-loader", // compiles Sass to CSS
+                options: {
+                    sourceMap: true
+                }
+            }]
+        }]
+    },
+    plugins: [
+        new htmlWebpackPlugin({
+            filename:'dist/index.html',
+            template: './index.html',
+            chunks: ['index']
+        }),
+        new htmlWebpackPlugin({
+            filename:'dist/bootstrap.html',
+            template: './bootstrap.html',
+            chunks: ['bootstrap']
+        })
+    ]
 }

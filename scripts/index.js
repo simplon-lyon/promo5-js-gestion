@@ -8,6 +8,7 @@
  * Si on ne met pas ça, il va aller chercher dans les node_modules.
  */
 import {MaClasse} from './ma-classe';
+import '../scss/index.scss';
 
 new MaClasse().methode();
 console.log('blip');

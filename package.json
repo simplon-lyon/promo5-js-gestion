@@ -4,7 +4,7 @@
   "description": "A javascript project for webpack and stuff",
   "main": "app.js",
   "scripts": {
-    "start": "npm run build & lite-server",
+    "start": "lite-server",
     "build": "node-sass scss --output dist/css --watch",
     "webpack": "webpack --watch"
   },
@@ -24,9 +24,15 @@
   },
   "homepage": "https://github.com/simplon-lyon/promo5-js-gestion#readme",
   "devDependencies": {
+    "css-loader": "^0.28.9",
+    "html-webpack-plugin": "^2.30.1",
     "lite-server": "^2.3.0",
     "node-sass": "^4.7.2",
+    "sass-loader": "^6.0.6",
+    "style-loader": "^0.19.1",
     "webpack": "^3.10.0"
   },
-  "dependencies": {}
+  "dependencies": {
+    "bootstrap": "^4.0.0"
+  }
 }
