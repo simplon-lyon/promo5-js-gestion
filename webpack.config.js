@@ -1,3 +1,4 @@
+const webpack = require('webpack');
 /**
  * Webpack est un utilitaire permettant de build les projets
  * javascripts de manière automatique.
@@ -23,7 +24,8 @@ module.exports = {
     //Le ou les points de départ de notre/nos script(s)
     entry: {
         index:'./scripts/index.js',
-        bootstrap:'./scripts/bootstrap.js'
+        bootstrap:'./scripts/bootstrap.js',
+        vendor: ['bootstrap']
     },
     //Le(s) fichier(s) généré(s) par webpack
     output: {
@@ -57,5 +59,20 @@ module.exports = {
                 }
             }]
         }]
-    }
+    },
+    plugins: [
+        /**
+         * Le CommonsChunkPlugin permet de généré un bundle supplémentaire
+         * qui contiendra tous les composant et librairies communes à tous
+         * les bundles.
+         * On lui indique ici le nom de l'entry point dans lequel on
+         * a mis les composants/librairies à bundler.
+         * Si on utilise ce plugin, il faudra forcément charger dans
+         * le html le vendor.bundle.js avant de charger le bundle propre
+         * à la page en question
+         */
+        new webpack.optimize.CommonsChunkPlugin({
+            name:'vendor'
+        })
+    ]
 }
